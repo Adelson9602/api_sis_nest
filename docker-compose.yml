@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  mysql:
+    build:
+      context: .
+      dockerfile: DockerFile
+    container_name: sisdb
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DB}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./db:/var/lib/mysql:rw
+    networks:
+      mysql_network:
+        aliases:
+          - mysql-host
+volumes:
+  db: {}
+networks:
+  mysql_network:
+    name: mysql_net
+    driver: bridge
+  

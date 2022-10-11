@@ -1,0 +1,2 @@
+# Version de mysql que usamos
+FROM mysql:5.7
