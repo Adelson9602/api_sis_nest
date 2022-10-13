@@ -2,6 +2,15 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MasterModule } from './master/master.module';
+import { TechnicalModule } from './technical/technical.module';
+import { FormatsModule } from './formats/formats.module';
+import { HumanManagementModule } from './human-management/human-management.module';
+import { CarParkModule } from './car-park/car-park.module';
+import { InventoryModule } from './inventory/inventory.module';
+import { InventoryAuditModule } from './inventory-audit/inventory-audit.module';
+import { AccessModule } from './access/access.module';
+import { InventoryControlModule } from './inventory-control/inventory-control.module';
+import { QueriesModule } from './queries/queries.module';
 
 @Module({
   imports: [
@@ -17,6 +26,15 @@ import { MasterModule } from './master/master.module';
       synchronize: true,
     }),
     MasterModule,
+    TechnicalModule,
+    FormatsModule,
+    HumanManagementModule,
+    CarParkModule,
+    InventoryModule,
+    InventoryAuditModule,
+    AccessModule,
+    InventoryControlModule,
+    QueriesModule,
   ],
   controllers: [],
   providers: [],
