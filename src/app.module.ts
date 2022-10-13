@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { VisitasRazonModule } from './visitas-interna/visitas-razon/visitas-razon.module';
-import { VisitasRazonModule } from './visitas-razon/visitas-razon.module';
 import { MasterModule } from './master/master.module';
 
 @Module({
@@ -18,7 +16,6 @@ import { MasterModule } from './master/master.module';
       entities: [],
       synchronize: true,
     }),
-    VisitasRazonModule,
     MasterModule,
   ],
   controllers: [],
