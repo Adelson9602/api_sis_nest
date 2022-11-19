@@ -24,6 +24,7 @@ import { QueriesModule } from './queries/queries.module';
       database: process.env.MYSQL_DB,
       entities: [],
       synchronize: true,
+      autoLoadEntities: true,
     }),
     MasterModule,
     TechnicalModule,
