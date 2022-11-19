@@ -2,8 +2,7 @@ import { Entity, Column, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class ConsumptionRollo {
-  @PrimaryColumn()
-  @Column('int', {
+  @PrimaryColumn('int', {
     width: 3,
   })
   consecutivoRollo: number;
