@@ -8,7 +8,7 @@ export class UsuarioBodega {
   @Column('bigint', {
     width: 12,
   })
-  idUsuario: number;
+  usuario: number;
 
   @Column('int', {
     width: 2,
@@ -25,7 +25,7 @@ export class UsuarioBodega {
     width: 12,
     comment: 'Datos de control',
   })
-  idUsuarioControl: number;
+  usuarioControl: number;
 
   @Column('timestamp', {
     comment: 'Datos de control',

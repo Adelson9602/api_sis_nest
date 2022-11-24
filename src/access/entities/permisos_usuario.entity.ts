@@ -1,33 +1,24 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class MacDirection {
+export class PermisosUsuario {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column('varchar', {
-    length: 18,
-  })
-  direccionMac: string;
-
   @Column('bigint', {
     width: 12,
   })
-  idUsuario: string;
+  usuario: number;
 
-  @Column('tinyint', {
-    width: 1,
-  })
-  estado: number;
+  @Column('json')
+  permisos: string;
 
   @Column('bigint', {
     width: 12,
     comment: 'Datos de control',
   })
-  idUsarioControl: number;
+  usuarioControl: number;
 
-  @Column('timestamp', {
-    comment: 'Datos de control',
-  })
+  @Column('timestamp')
   fechaHora: Date;
 }

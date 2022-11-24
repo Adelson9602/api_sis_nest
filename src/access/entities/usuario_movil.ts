@@ -8,7 +8,7 @@ export class UsuarioMovil {
   @Column('bigint', {
     width: 12,
   })
-  idUsuario: string;
+  usuario: number;
 
   @Column('int', {
     width: 12,
@@ -17,18 +17,18 @@ export class UsuarioMovil {
 
   @Column('tinyint', {
     width: 12,
-    comment: '0: INACTIVO, 1: ACTIVO',
+    comment: '0: Inactivo, 1: Activo',
   })
-  estado: string;
+  estado: number;
 
   @Column('bigint', {
     width: 12,
     comment: 'Datos de control',
   })
-  idUsarioControl: string;
+  usuarioControl: number;
 
   @Column('timestamp', {
     comment: 'Datos de control',
   })
-  fechaHora: string;
+  fechaHora: Date;
 }
