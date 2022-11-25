@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class MobileTransferHeader {
+export class EncabezadoTrasladoMovil {
   @PrimaryGeneratedColumn('increment')
   idTrasladoMovil: number;
 
@@ -23,7 +23,7 @@ export class MobileTransferHeader {
   @Column('bigint', {
     width: 12,
   })
-  idUsuarioEntrega: number;
+  usuarioEntrega: number;
 
   @Column('int', {
     width: 5,
@@ -39,7 +39,7 @@ export class MobileTransferHeader {
     width: 12,
     nullable: true,
   })
-  idUsuarioRecibe: number;
+  usuarioRecibe: number;
 
   @Column('varchar', {
     length: 300,

@@ -3,10 +3,11 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class MacDirection {
   @PrimaryGeneratedColumn('increment')
-  id: number;
+  idMac: number;
 
   @Column('varchar', {
     length: 18,
+    primary: true,
   })
   direccionMac: string;
 

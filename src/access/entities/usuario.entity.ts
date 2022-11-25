@@ -7,8 +7,9 @@ export class Usuario {
 
   @Column('bigint', {
     width: 12,
+    primary: true,
   })
-  idUsuario: number;
+  usuario: number;
 
   @Column('varchar', {
     length: 36,

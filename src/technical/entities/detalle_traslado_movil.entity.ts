@@ -1,15 +1,19 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class MobileTransferSerial {
-  @PrimaryGeneratedColumn()
+export class DetalleTrasladoMovil {
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column('int', {
-    nullable: false,
     width: 9,
   })
   idTrasladoMovil: number;
+
+  @Column('int', {
+    width: 2,
+  })
+  idReserva: number;
 
   @Column('varchar', {
     length: 15,
@@ -19,13 +23,13 @@ export class MobileTransferSerial {
   @Column('int', {
     width: 2,
   })
-  idLote: number;
+  idLote28: number;
+
+  @Column('float')
+  cantidadTrasladar: number;
 
   @Column('varchar', {
-    length: 36,
+    length: 120,
   })
-  serial: number;
-
-  @Column('timestamp')
-  fechaHora: Date;
+  observacion: string;
 }

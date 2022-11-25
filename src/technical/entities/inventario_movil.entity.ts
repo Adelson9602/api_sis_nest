@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class MobileInventory {
+export class InventarioMovil {
   @PrimaryGeneratedColumn('increment')
   id: number;
 

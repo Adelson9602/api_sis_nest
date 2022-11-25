@@ -1,11 +1,21 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { HumanManagementService } from './human-management.service';
 import { CreateHumanManagementDto } from './dto/create-human-management.dto';
 import { UpdateHumanManagementDto } from './dto/update-human-management.dto';
 
 @Controller('human-management')
 export class HumanManagementController {
-  constructor(private readonly humanManagementService: HumanManagementService) {}
+  constructor(
+    private readonly humanManagementService: HumanManagementService,
+  ) {}
 
   @Post()
   create(@Body() createHumanManagementDto: CreateHumanManagementDto) {
@@ -23,7 +33,10 @@ export class HumanManagementController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateHumanManagementDto: UpdateHumanManagementDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateHumanManagementDto: UpdateHumanManagementDto,
+  ) {
     return this.humanManagementService.update(+id, updateHumanManagementDto);
   }
 

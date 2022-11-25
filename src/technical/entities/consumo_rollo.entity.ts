@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryColumn } from 'typeorm';
 
 @Entity()
-export class ConsumptionRollo {
+export class ConsumoRollo {
   @PrimaryColumn('int', {
     width: 3,
   })
