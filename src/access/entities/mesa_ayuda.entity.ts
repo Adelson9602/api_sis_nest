@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class HelpTable {
+export class MesaAyuda {
   @PrimaryGeneratedColumn('increment')
   idAyuda: number;
 

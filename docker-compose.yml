@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: DockerFile
-    container_name: sisdb
+    container_name: sicte
     restart: always
     ports:
       - '3306:3306'

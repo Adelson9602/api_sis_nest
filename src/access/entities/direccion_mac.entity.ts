@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class MacDirection {
+export class DireccionMac {
   @PrimaryGeneratedColumn('increment')
   idMac: number;
 

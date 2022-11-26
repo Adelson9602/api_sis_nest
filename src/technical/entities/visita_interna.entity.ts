@@ -96,7 +96,7 @@ export class VisitaInterna {
   @Column('tinyint', {
     width: 1,
   })
-  factClaro: string;
+  facturaClaro: string;
 
   @Column('tinyint', {
     width: 1,
@@ -114,23 +114,23 @@ export class VisitaInterna {
     length: 20,
     default: '0',
   })
-  iniciaVis: string;
+  iniciaVisita: string;
 
   @Column('datetime', {
     nullable: true,
   })
-  timeVis: Date;
+  horaVisita: Date;
 
   @Column('varchar', {
     length: 20,
     default: '0',
   })
-  iniciaCheq: string;
+  iniciaChequeo: string;
 
   @Column('datetime', {
     nullable: true,
   })
-  timeCheq: Date;
+  terminaChequeo: Date;
 
   @Column('varchar', {
     length: 20,
