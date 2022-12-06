@@ -1,9 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, Double } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class DetalleConsumo {
+export class DetConsumosDelete {
   @PrimaryGeneratedColumn('increment')
-  id: number;
+  idDetConsumosDelete: number;
 
   @Column('bigint', {
     width: 15,
@@ -25,8 +25,12 @@ export class DetalleConsumo {
   })
   idTipoReserva: number;
 
-  @Column('float') // longitud 20,2
-  cantidadConsumo: Double;
+  @Column('float', {
+    precision: 20,
+    scale: 2,
+    default: 0.0,
+  })
+  cantidadConsum: number;
 
   @Column('int', {
     width: 5,
@@ -40,22 +44,17 @@ export class DetalleConsumo {
 
   @Column('varchar', {
     length: 64,
-    nullable: true,
   })
   observacion: string;
 
   @Column('int', {
     width: 1,
-    nullable: true,
-    default: 0,
-    comment: '0: pendiente, 1: Aprobado, 2: Novedad, 3: Rechazado',
+    comment: '0: Pendiente, 1: Aprobado, 2: Novedad, 3: Rechazado',
   })
   estadoFacturacion: number;
 
   @Column('int', {
     width: 1,
-    nullable: true,
-    default: 0,
     comment: '0: Pendiente, 1: Aprobado, 2: Novedad',
   })
   estadoLogistica: number;

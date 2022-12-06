@@ -1,11 +1,9 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class ConsumoRollo {
-  @PrimaryColumn('int', {
-    width: 3,
-  })
-  consecutivoRollo: number;
+export class RolloConsumoDelete {
+  @PrimaryGeneratedColumn('increment')
+  idRolloConsumoDelete: number;
 
   @Column('bigint', {
     width: 15,
@@ -33,6 +31,11 @@ export class ConsumoRollo {
   rollo: string;
 
   @Column('int', {
+    width: 3,
+  })
+  consecutivoRollo: number;
+
+  @Column('int', {
     width: 4,
   })
   abscisaInicial: number;
@@ -42,7 +45,11 @@ export class ConsumoRollo {
   })
   abscisaFinal: number;
 
-  @Column('float')
+  @Column('float', {
+    precision: 20,
+    scale: 2,
+    default: 0.0,
+  })
   cantidad: number;
 
   @Column('timestamp')

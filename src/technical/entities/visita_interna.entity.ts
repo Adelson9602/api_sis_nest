@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class VisitaInterna {
   @PrimaryGeneratedColumn('increment')
-  id: number;
+  idVisitaInterna: number;
 
   @Column('timestamp')
   fecha: Date;

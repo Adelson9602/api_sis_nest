@@ -1,11 +1,9 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class ConsumoRollo {
-  @PrimaryColumn('int', {
-    width: 3,
-  })
-  consecutivoRollo: number;
+export class SerialConsumo {
+  @PrimaryGeneratedColumn('increment')
+  idSerialConsumo: number;
 
   @Column('bigint', {
     width: 15,
@@ -28,22 +26,21 @@ export class ConsumoRollo {
   idTipoReserva: number;
 
   @Column('varchar', {
-    length: 24,
+    length: 36,
   })
-  rollo: string;
+  serial: string;
 
   @Column('int', {
-    width: 4,
+    width: 5,
   })
-  abscisaInicial: number;
+  idSubtipoConsumos: number;
 
-  @Column('int', {
-    width: 4,
+  @Column('tinyint', {
+    width: 1,
+    default: 0,
+    comment: '0: Pendiente consumo 1: Consumido',
   })
-  abscisaFinal: number;
-
-  @Column('float')
-  cantidad: number;
+  qryCalro: number;
 
   @Column('timestamp')
   fechaControl: Date;

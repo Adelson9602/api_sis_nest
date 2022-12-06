@@ -9,6 +9,14 @@ import {
   DetalleConsumo,
   InventarioMovil,
   DetalleTrasladoMovil,
+  ActividadesClaro,
+  DetConsumosDelete,
+  GrupoTrabajo,
+  Reposicion,
+  RolloConsumoDelete,
+  RolloTrasladoMoviles,
+  SerialConsumoDelete,
+  SerialConsumo,
 } from './entities';
 
 @Module({
@@ -22,6 +30,14 @@ import {
       ConsumoRollo,
       InventarioMovil,
       DetalleTrasladoMovil,
+      ActividadesClaro,
+      DetConsumosDelete,
+      GrupoTrabajo,
+      Reposicion,
+      RolloConsumoDelete,
+      RolloTrasladoMoviles,
+      SerialConsumoDelete,
+      SerialConsumo,
     ]),
   ],
 })

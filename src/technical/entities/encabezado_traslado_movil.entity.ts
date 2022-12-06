@@ -60,5 +60,5 @@ export class EncabezadoTrasladoMovil {
   cedulaAprobado: number;
 
   @Column('timestamp')
-  fechaHora: Date;
+  fechaControl: Date;
 }

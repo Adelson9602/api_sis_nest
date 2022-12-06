@@ -2,8 +2,8 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class SerialTrasladoMovil {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('increment')
+  idSerialTrasladoMovil: number;
 
   @Column('int', {
     nullable: false,
@@ -27,5 +27,5 @@ export class SerialTrasladoMovil {
   serial: number;
 
   @Column('timestamp')
-  fechaHora: Date;
+  fechaControl: Date;
 }
