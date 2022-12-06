@@ -63,14 +63,6 @@ export class EncabezadoPreoperacional {
   })
   estado: string;
 
-  @Column('bigint', {
-    width: 12,
-  })
-  usuarioControl: string;
-
-  @Column('timestamp')
-  fechaControl: Date;
-
   @Column('date')
   fechaSoat: Date;
 
@@ -81,4 +73,12 @@ export class EncabezadoPreoperacional {
 
   @Column('date')
   fechaLicencia: Date;
+
+  @Column('bigint', {
+    width: 12,
+  })
+  usuarioControl: string;
+
+  @Column('timestamp')
+  fechaControl: Date;
 }

@@ -35,7 +35,12 @@ export class InventarioMovil {
   })
   idTipoReserva: number;
 
-  @Column('float') //20,2
+  @Column('float', {
+    nullable: true,
+    precision: 20,
+    scale: 2,
+    default: 0.0,
+  })
   cantidadEntregada: number;
 
   @Column('float', {
@@ -44,5 +49,5 @@ export class InventarioMovil {
     scale: 2,
     default: 0.0,
   })
-  cantidadPendiente: number; //20,2 Sí NULL
+  cantidadPendiente: number;
 }
