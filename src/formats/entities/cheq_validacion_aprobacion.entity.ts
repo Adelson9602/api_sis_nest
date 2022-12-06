@@ -1,9 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class ChequeoValidacionAprobacion {
+export class CheqValiAprobacion {
   @PrimaryGeneratedColumn()
-  id: number;
+  idCheqValiAprobacion: number;
 
   @Column('int', {
     width: 11,

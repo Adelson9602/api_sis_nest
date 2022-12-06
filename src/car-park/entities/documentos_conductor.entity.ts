@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class DocumentosConductor {
   @PrimaryGeneratedColumn('increment')
-  idDocumento: number;
+  idDocumentosConductor: number;
 
   @Column('bigint', {
     width: 12,

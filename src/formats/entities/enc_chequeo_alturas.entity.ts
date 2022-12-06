@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class EncChequoAlturas {
   @PrimaryGeneratedColumn('increment')
-  idEncChequeo: number;
+  idEncChequoAlturas: number;
 
   @Column('int', {
     width: 11,

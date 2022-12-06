@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class MesaAyuda {
   @PrimaryGeneratedColumn('increment')
-  idAyuda: number;
+  idMesaAyuda: number;
 
   @Column('varchar', {
     length: 100,

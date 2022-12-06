@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import {
   CategoriaItem,
   CategoriaOpciones,
-  ChequeoValidacionAprobacion,
+  CheqValiAprobacion,
   DetChequeoAlturas,
   EncabezadoTrasladoMovil,
   FormatosEspeciales,
@@ -20,7 +20,7 @@ import {
     TypeOrmModule.forFeature([
       CategoriaItem,
       CategoriaOpciones,
-      ChequeoValidacionAprobacion,
+      CheqValiAprobacion,
       DetChequeoAlturas,
       EncabezadoTrasladoMovil,
       FormatosEspeciales,

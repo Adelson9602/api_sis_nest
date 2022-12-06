@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class FormatosEspeciales {
   @PrimaryGeneratedColumn('increment')
-  idFormato: number;
+  idFormatosEspeciales: number;
 
   @Column('varchar', {
     length: 25,

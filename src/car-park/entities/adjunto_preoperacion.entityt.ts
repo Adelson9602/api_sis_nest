@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class AdjuntosPreoperacional {
   @PrimaryGeneratedColumn('increment')
-  idAdjunto: number;
+  idAdjuntosPreoperacional: number;
 
   @Column('varchar', {
     length: 500,

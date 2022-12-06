@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class PermisosUsuario {
   @PrimaryGeneratedColumn('increment')
-  id: number;
+  idPermisosUsuario: number;
 
   @Column('bigint', {
     width: 12,

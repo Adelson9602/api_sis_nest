@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class DetallePreoperacional {
   @PrimaryGeneratedColumn('increment')
-  idDetalle: number;
+  idDetallePreoperacional: number;
 
   @Column('int', {
     width: 11,

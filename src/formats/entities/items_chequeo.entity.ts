@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class ItemsChequeo {
   @PrimaryGeneratedColumn('increment')
-  idItem: number;
+  idItemsChequeo: number;
 
   @Column('varchar', {
     length: 500,

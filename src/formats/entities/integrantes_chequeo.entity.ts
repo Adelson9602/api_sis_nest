@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class IntegrantesChequeo {
   @PrimaryGeneratedColumn('increment')
-  id: number;
+  idIntegrantesChequeo: number;
 
   @Column('int', {
     primary: true,

@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class DetChequeoAlturas {
   @PrimaryGeneratedColumn('increment')
-  idDetalle: number;
+  idDetChequeoAlturas: number;
 
   @Column('int', {
     width: 11,

@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class ModulosFronted {
   @PrimaryGeneratedColumn('increment')
-  idModulo: number;
+  idModulosFronted: number;
 
   @Column('varchar', {
     length: 100,
