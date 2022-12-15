@@ -1,22 +1,24 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class Area {
+export class Lote {
   @PrimaryGeneratedColumn('increment')
-  idArea: number;
+  idLote: number;
 
   @Column('varchar', {
-    length: 100,
+    length: 24,
   })
-  nombreArea: string;
+  lote: string;
 
   @Column('int', {
     width: 1,
+    comment: '0: Inactivo, 1: Activo',
   })
   estado: number;
 
   @Column('bigint', {
-    width: 20,
+    width: 12,
+    comment: '0: Inactivo, 1: Activo',
   })
   usuarioControl: number;
 

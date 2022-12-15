@@ -1,25 +1,31 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class Area {
+export class Bodega {
   @PrimaryGeneratedColumn('increment')
-  idArea: number;
+  idBodega: number;
 
   @Column('varchar', {
-    length: 100,
+    length: 36,
   })
-  nombreArea: string;
+  bodega: string;
 
   @Column('int', {
+    width: 2,
+  })
+  idCiudad: number;
+
+  @Column('int', {
+    comment: '0: Inactivo, 1: Active',
     width: 1,
   })
   estado: number;
 
   @Column('bigint', {
-    width: 20,
+    width: 12,
   })
-  usuarioControl: number;
+  idUsuario: number;
 
   @Column('timestamp')
-  fechaControl: Date;
+  fechaHora: Date;
 }

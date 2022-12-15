@@ -1,20 +1,22 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class Bom {
+export class Promedio {
   @PrimaryGeneratedColumn('increment')
-  id: number;
-
-  @Column('varchar', {
-    comment: 'Concatenado de ID_Proyecto y ID_Producto',
-    length: 50,
-  })
-  idBom: string;
+  idPromedio: number;
 
   @Column('int', {
-    width: 4,
+    width: 2,
   })
-  idProyecto: number;
+  idCiudad: number;
+
+  @Column('date')
+  fechaPromedio: Date;
+
+  @Column('int', {
+    width: 3,
+  })
+  idGrupoTrabajo: number;
 
   @Column('varchar', {
     length: 15,
@@ -25,15 +27,18 @@ export class Bom {
     precision: 20,
     scale: 2,
     default: 0.0,
+    comment: 'Cantidad Promedio',
   })
-  cantidadBom: number;
+  promedio: number;
 
   @Column('float', {
     precision: 20,
     scale: 2,
     default: 0.0,
+    comment:
+      'cantidad maxima que puede reportar el tecnico en consumo acorde al grupo de actividades',
   })
-  cantidadBomAdi: number;
+  cantMax: number;
 
   @Column('int', {
     width: 1,
@@ -47,5 +52,5 @@ export class Bom {
   usuarioControl: number;
 
   @Column('timestamp')
-  fechaHora: Date;
+  fechaControl: Date;
 }
