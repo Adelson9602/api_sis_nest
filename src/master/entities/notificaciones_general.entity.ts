@@ -1,25 +1,32 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class UnidadMedida {
+export class NotificacionesGeneral {
   @PrimaryGeneratedColumn('increment')
-  idUnidad: number;
+  id: number;
 
   @Column('varchar', {
-    length: 24,
+    length: 100,
   })
-  unidad: string;
+  titulo: string;
 
   @Column('varchar', {
-    length: 64,
+    length: 500,
   })
-  desUnidad: string;
+  descripcion: string;
+
+  @Column('bigint', {
+    width: 15,
+  })
+  usuarioNotificado: number;
 
   @Column('tinyint', {
     width: 1,
-    comment: '0: Inactivo 1: Activo',
   })
   estado: number;
+
+  @Column('timestamp')
+  fechaNotificacion: Date;
 
   @Column('bigint', {
     width: 12,

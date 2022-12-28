@@ -1,23 +1,29 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class UnidadMedida {
+export class MovilPersona {
   @PrimaryGeneratedColumn('increment')
-  idUnidad: number;
+  idMovilPersona: number;
 
-  @Column('varchar', {
-    length: 24,
+  @Column('int', {
+    width: 5,
   })
-  unidad: string;
+  idMovil: number;
 
-  @Column('varchar', {
-    length: 64,
+  @Column('bigint', {
+    width: 12,
   })
-  desUnidad: string;
+  usuario: number;
+
+  @Column('int', {
+    width: 11,
+    default: 1,
+  })
+  tecnicoppl: number;
 
   @Column('tinyint', {
     width: 1,
-    comment: '0: Inactivo 1: Activo',
+    comment: '0: Inactivo, 1: Activo',
   })
   estado: number;
 
