@@ -50,7 +50,7 @@ export class Proyecto {
   @Column('bigint', {
     width: 12,
   })
-  usuaraioControl: number;
+  usuarioControl: number;
 
   @Column('timestamp')
   fechaControl: Date;
