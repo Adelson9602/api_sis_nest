@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class DetRboGarantiaRecogidos {
   @PrimaryGeneratedColumn('increment')
-  idRboGarRec: number;
+  idDetRboGarRec: number;
 
   @Column('varchar', {
     length: 15,
