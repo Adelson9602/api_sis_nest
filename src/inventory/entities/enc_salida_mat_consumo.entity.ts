@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class EncRboGarantiaRecogidos {
+export class EncSalidaMatConsumo {
   @PrimaryGeneratedColumn('increment')
   idSalMatConsumo: number;
 

@@ -4,6 +4,6 @@ import { QueriesController } from './queries.controller';
 
 @Module({
   controllers: [QueriesController],
-  providers: [QueriesService]
+  providers: [QueriesService],
 })
 export class QueriesModule {}
