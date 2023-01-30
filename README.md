@@ -26,14 +26,13 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-
 ## Installation
 
 ```bash
 $ yarn
 ```
 
-Clonar el archivo ```.env.template``` y renombrarlo a ```.env```
+Clonar el archivo `.env.template` y renombrarlo a `.env`
 Cambiar las variables de entorno
 
 Levantar la base de datos
@@ -41,7 +40,7 @@ Levantar la base de datos
 ## Running database
 
 ```bash
-$ docker-compose-up -d
+$ docker-compose up -d
 ```
 
 ## Running the app

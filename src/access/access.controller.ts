@@ -11,7 +11,7 @@ import { AccessService } from './access.service';
 import { CreateAccessDto } from './dto/create-access.dto';
 import { UpdateAccessDto } from './dto/update-access.dto';
 
-@Controller('access')
+@Controller('usuario')
 export class AccessController {
   constructor(private readonly accessService: AccessService) {}
 
@@ -27,6 +27,7 @@ export class AccessController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
+    console.log('aSDAsd');
     return this.accessService.findOne(+id);
   }
 

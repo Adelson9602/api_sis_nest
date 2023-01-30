@@ -11,6 +11,7 @@ import { InventoryAuditModule } from './inventory-audit/inventory-audit.module';
 import { AccessModule } from './access/access.module';
 import { InventoryControlModule } from './inventory-control/inventory-control.module';
 import { QueriesModule } from './queries/queries.module';
+import { UsuarioService } from './access/services/usuario/usuario.service';
 
 @Module({
   imports: [
@@ -38,6 +39,6 @@ import { QueriesModule } from './queries/queries.module';
     QueriesModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [UsuarioService],
 })
 export class AppModule {}

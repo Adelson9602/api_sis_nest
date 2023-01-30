@@ -12,10 +12,12 @@ import {
   UsuarioBodega,
   UsuarioMovil,
 } from './entities';
+import { UsuarioService } from './services/usuario/usuario.service';
+import { UsuarioController } from './controllers/usuario/usuario.controller';
 
 @Module({
-  controllers: [AccessController],
-  providers: [AccessService],
+  controllers: [AccessController, UsuarioController],
+  providers: [AccessService, UsuarioService],
   imports: [
     TypeOrmModule.forFeature([
       DireccionMac,

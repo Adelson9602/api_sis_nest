@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Usuario {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   idUsuario: number;
 
   @Column('bigint', {
@@ -18,6 +18,7 @@ export class Usuario {
 
   @Column('varchar', {
     length: 36,
+    nullable: true,
   })
   segundoApellido: string;
 
@@ -28,6 +29,7 @@ export class Usuario {
 
   @Column('varchar', {
     length: 36,
+    nullable: true,
   })
   segundoNombre: string;
 
