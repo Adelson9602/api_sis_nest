@@ -6,11 +6,13 @@ import {
   MinLength,
 } from 'class-validator';
 
-export class CrearUsuario {
+export class CrearUsuarioDto {
   @IsNumber()
+  @IsPositive()
   idUsuario?: number;
 
   @IsNumber()
+  @IsPositive()
   @MinLength(1)
   usuario: number; // Se toma como usuario la cédula
 
@@ -62,6 +64,7 @@ export class CrearUsuario {
 
   @IsNumber()
   @MinLength(1)
+  @IsPositive()
   idUsuarioControl: number;
 
   // fechaHora?: Date;

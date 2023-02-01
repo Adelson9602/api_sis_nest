@@ -11,11 +11,11 @@ import { AccessService } from './access.service';
 import { CreateAccessDto } from './dto/create-access.dto';
 import { UpdateAccessDto } from './dto/update-access.dto';
 
-@Controller('usuario')
+@Controller('access')
 export class AccessController {
   constructor(private readonly accessService: AccessService) {}
 
-  @Post()
+  @Post('create')
   create(@Body() createAccessDto: CreateAccessDto) {
     return this.accessService.create(createAccessDto);
   }
@@ -25,18 +25,17 @@ export class AccessController {
     return this.accessService.findAll();
   }
 
-  @Get(':id')
+  @Get('find_by_id/:id')
   findOne(@Param('id') id: string) {
-    console.log('aSDAsd');
     return this.accessService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('update/:id')
   update(@Param('id') id: string, @Body() updateAccessDto: UpdateAccessDto) {
     return this.accessService.update(+id, updateAccessDto);
   }
 
-  @Delete(':id')
+  @Delete('delete/:id')
   remove(@Param('id') id: string) {
     return this.accessService.remove(+id);
   }

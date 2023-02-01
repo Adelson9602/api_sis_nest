@@ -8,16 +8,15 @@ import {
   ModulosFronted,
   PermisosBasicos,
   PermisosUsuario,
-  Usuario,
   UsuarioBodega,
   UsuarioMovil,
 } from './entities';
-import { UsuarioService } from './services/usuario/usuario.service';
-import { UsuarioController } from './controllers/usuario/usuario.controller';
+import { UsuarioModule } from './usuario/usuario.module';
+import { Usuario } from './usuario/entities/usuario.entity';
 
 @Module({
-  controllers: [AccessController, UsuarioController],
-  providers: [AccessService, UsuarioService],
+  controllers: [AccessController],
+  providers: [AccessService],
   imports: [
     TypeOrmModule.forFeature([
       DireccionMac,
@@ -29,6 +28,7 @@ import { UsuarioController } from './controllers/usuario/usuario.controller';
       UsuarioMovil,
       Usuario,
     ]),
+    UsuarioModule,
   ],
 })
 export class AccessModule {}

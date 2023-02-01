@@ -5,7 +5,6 @@ import { PermisosBasicos } from './permisos_basicos.entity';
 import { PermisosUsuario } from './permisos_usuario.entity';
 import { UsuarioBodega } from './usuario_bodega.entity';
 import { UsuarioMovil } from './usuario_movil';
-import { Usuario } from './usuario.entity';
 
 export {
   DireccionMac,
@@ -15,5 +14,4 @@ export {
   PermisosUsuario,
   UsuarioBodega,
   UsuarioMovil,
-  Usuario,
 };
