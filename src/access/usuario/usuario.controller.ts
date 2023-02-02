@@ -35,12 +35,12 @@ export class UsuarioController {
     return user;
   }
 
-  @Patch(':usuario')
+  @Patch('editar/:idUsuario')
   update(
-    @Param('id') id: string,
+    @Param('idUsuario') idUsuario: string,
     @Body() actualizarUsuarioDto: ActualizarUsuarioDto,
   ) {
-    return this.usuarioService.update(+id, actualizarUsuarioDto);
+    return this.usuarioService.update(+idUsuario, actualizarUsuarioDto);
   }
 
   @Delete(':usuario')

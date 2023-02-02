@@ -4,7 +4,10 @@ import { CrearUsuarioDto } from './dto/create-usuario.dto';
 import { ActualizarUsuarioDto } from './dto/update-usuario.dto';
 import { Usuario } from './entities/usuario.entity';
 import { Repository } from 'typeorm';
-import { InternalServerErrorException } from '@nestjs/common/exceptions';
+import {
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common/exceptions';
 import { PaginationDto } from 'src/common/dtos/pagination.dto';
 
 @Injectable()
@@ -40,8 +43,22 @@ export class UsuarioService {
     return this.usuarioRepository.findOneBy({ usuario });
   }
 
-  update(id: number, actualizarUsuarioDto: ActualizarUsuarioDto) {
-    return `This action updates a #${id} usuario`;
+  async update(idUsuario: number, actualizarUsuarioDto: ActualizarUsuarioDto) {
+    const user = await this.usuarioRepository.preload({
+      idUsuario,
+      ...actualizarUsuarioDto,
+    });
+
+    if (!user)
+      throw new NotFoundException(`Usuario con id ${idUsuario} no encontrado`);
+
+    try {
+      await this.usuarioRepository.save(user);
+      return user;
+    } catch (error) {
+      console.log('first');
+      this.handleExceptions(error);
+    }
   }
 
   async remove(usuario: number) {

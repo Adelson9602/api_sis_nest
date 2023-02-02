@@ -12,7 +12,6 @@ export class Usuario {
 
   @Column('bigint', {
     width: 12,
-    primary: true,
     unique: true,
   })
   usuario: number;
