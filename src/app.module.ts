@@ -11,6 +11,7 @@ import { InventoryAuditModule } from './inventory-audit/inventory-audit.module';
 import { AccessModule } from './access/access.module';
 import { InventoryControlModule } from './inventory-control/inventory-control.module';
 import { QueriesModule } from './queries/queries.module';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
@@ -36,6 +37,7 @@ import { QueriesModule } from './queries/queries.module';
     AccessModule,
     InventoryControlModule,
     QueriesModule,
+    CommonModule,
   ],
   controllers: [],
   providers: [],

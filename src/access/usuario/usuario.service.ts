@@ -1,26 +1,60 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
 import { CrearUsuarioDto } from './dto/create-usuario.dto';
 import { ActualizarUsuarioDto } from './dto/update-usuario.dto';
+import { Usuario } from './entities/usuario.entity';
+import { Repository } from 'typeorm';
+import { InternalServerErrorException } from '@nestjs/common/exceptions';
+import { PaginationDto } from 'src/common/dtos/pagination.dto';
 
 @Injectable()
 export class UsuarioService {
-  create(crearUsuarioDto: CrearUsuarioDto) {
-    return 'This action adds a new usuario';
+  private readonly logger = new Logger('UsuarioService');
+
+  constructor(
+    @InjectRepository(Usuario)
+    private readonly usuarioRepository: Repository<Usuario>,
+  ) {}
+
+  async create(crearUsuarioDto: CrearUsuarioDto) {
+    try {
+      const usuario = this.usuarioRepository.create(crearUsuarioDto);
+      // guarda en DB
+      await this.usuarioRepository.save(usuario);
+
+      return usuario;
+    } catch (error) {
+      this.handleExceptions(error);
+    }
   }
 
-  findAll() {
-    return `This action returns all usuario`;
+  findAll(paginationDto: PaginationDto) {
+    const { limit, offset } = paginationDto;
+    return this.usuarioRepository.find({
+      take: limit,
+      skip: offset,
+    });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} usuario`;
+  findOne(usuario: number) {
+    return this.usuarioRepository.findOneBy({ usuario });
   }
 
   update(id: number, actualizarUsuarioDto: ActualizarUsuarioDto) {
     return `This action updates a #${id} usuario`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} usuario`;
+  async remove(usuario: number) {
+    const user = await this.findOne(usuario);
+    this.usuarioRepository.remove(user);
+  }
+
+  private handleExceptions(error: any) {
+    if (error.sqlMessage)
+      throw new InternalServerErrorException(error.sqlMessage);
+    this.logger.error(error);
+    throw new InternalServerErrorException(
+      'Error, por favor revise el log de errores',
+    );
   }
 }

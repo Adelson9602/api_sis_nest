@@ -1,4 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Usuario {
@@ -8,6 +13,7 @@ export class Usuario {
   @Column('bigint', {
     width: 12,
     primary: true,
+    unique: true,
   })
   usuario: number;
 
@@ -71,8 +77,6 @@ export class Usuario {
   })
   idUsuarioControl: number;
 
-  @Column('timestamp', {
-    comment: 'Datos de control',
-  })
+  @CreateDateColumn()
   fechaHora: Date;
 }

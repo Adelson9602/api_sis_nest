@@ -6,31 +6,36 @@ import {
   Patch,
   Param,
   Delete,
+  NotFoundException,
+  Query,
 } from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { ActualizarUsuarioDto } from './dto/update-usuario.dto';
 import { CrearUsuarioDto } from './dto/create-usuario.dto';
+import { PaginationDto } from '../../common/dtos/pagination.dto';
 
-@Controller('usuario')
+@Controller('access/usuario')
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
 
-  @Post()
+  @Post('crear')
   create(@Body() crearUsuarioDto: CrearUsuarioDto) {
     return this.usuarioService.create(crearUsuarioDto);
   }
 
   @Get()
-  findAll() {
-    return this.usuarioService.findAll();
+  findAll(@Query() paginationDto: PaginationDto) {
+    return this.usuarioService.findAll(paginationDto);
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usuarioService.findOne(+id);
+  @Get(':usuario')
+  async findOne(@Param('usuario') usuario: string) {
+    const user = await this.usuarioService.findOne(+usuario);
+    if (!user) throw new NotFoundException(`Usuario ${usuario} no encontrado`);
+    return user;
   }
 
-  @Patch(':id')
+  @Patch(':usuario')
   update(
     @Param('id') id: string,
     @Body() actualizarUsuarioDto: ActualizarUsuarioDto,
@@ -38,8 +43,8 @@ export class UsuarioController {
     return this.usuarioService.update(+id, actualizarUsuarioDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.usuarioService.remove(+id);
+  @Delete(':usuario')
+  async remove(@Param('usuario') usuario: string) {
+    this.usuarioService.remove(+usuario);
   }
 }

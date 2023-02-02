@@ -26,7 +26,6 @@ import { Usuario } from './usuario/entities/usuario.entity';
       PermisosUsuario,
       UsuarioBodega,
       UsuarioMovil,
-      Usuario,
     ]),
     UsuarioModule,
   ],
