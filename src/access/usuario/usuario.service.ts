@@ -9,6 +9,7 @@ import {
   NotFoundException,
 } from '@nestjs/common/exceptions';
 import { PaginationDto } from 'src/common/dtos/pagination.dto';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsuarioService {
@@ -21,7 +22,13 @@ export class UsuarioService {
 
   async create(crearUsuarioDto: CrearUsuarioDto) {
     try {
-      const usuario = this.usuarioRepository.create(crearUsuarioDto);
+      const { password, ...userData } = crearUsuarioDto;
+
+      const usuario = this.usuarioRepository.create({
+        password: bcrypt.hashSync(password, 10),
+        ...userData,
+        rol: crearUsuarioDto.rolId,
+      });
       // guarda en DB
       await this.usuarioRepository.save(usuario);
 
