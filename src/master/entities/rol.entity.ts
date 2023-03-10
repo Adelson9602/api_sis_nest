@@ -1,9 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Usuario } from '../../access/usuario/entities/usuario.entity';
 
 @Entity()
 export class Rol {
   @PrimaryGeneratedColumn('increment')
-  idRol: number;
+  @OneToMany(() => Usuario, (usuario) => usuario.rol)
+  id: number;
 
   @Column('varchar', {
     length: 64,

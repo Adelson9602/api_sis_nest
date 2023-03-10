@@ -1,8 +1,11 @@
+import { Rol } from 'src/master/entities';
 import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
+  ManyToOne,
+  JoinTable,
 } from 'typeorm';
 
 @Entity()
@@ -50,10 +53,12 @@ export class Usuario {
   })
   preoperacional: number;
 
-  @Column('int', {
-    width: 3,
+  @ManyToOne(() => Rol, (rol) => rol.id, {
+    cascade: true,
+    onUpdate: 'CASCADE',
   })
-  idRol: number;
+  @JoinTable()
+  rol: number;
 
   @Column('tinyint', {
     width: 1,
@@ -62,6 +67,7 @@ export class Usuario {
 
   @Column('varchar', {
     length: 512,
+    select: false,
   })
   password: string;
 

@@ -12,6 +12,8 @@ import { AccessModule } from './access/access.module';
 import { InventoryControlModule } from './inventory-control/inventory-control.module';
 import { QueriesModule } from './queries/queries.module';
 import { CommonModule } from './common/common.module';
+import { AuthModule } from './access/auth/auth.module';
+import { UsuarioModule } from './access/usuario/usuario.module';
 
 @Module({
   imports: [
@@ -38,6 +40,8 @@ import { CommonModule } from './common/common.module';
     InventoryControlModule,
     QueriesModule,
     CommonModule,
+    AuthModule,
+    UsuarioModule,
   ],
   controllers: [],
   providers: [],
